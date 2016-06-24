@@ -41,7 +41,6 @@ namespace JSON
             
             STEPNCLib.Finder find = new STEPNCLib.Finder();
             find.OpenProject("C:/Users/Nick/Documents/GitHub/StepNCViewer/data/boxy/boxy.stpnc");
-            Console.WriteLine(find.GetMainWorkplan());
             long count = find.GetToolAllCount();
             long[] tools = new long[count];
             for(long i = 0; i < count; i++)
@@ -52,8 +51,9 @@ namespace JSON
             for(long i = 0; i < tools.Length; i++)
             {
                 bool test = false;
-                Console.WriteLine(find.GetToolReferenceDataName(tools[i], out test));
-                Console.WriteLine(test);
+                bool test2 = false;
+                double dub = 0.0;
+                Console.WriteLine(find.GetToolType(tools[i]));
             }
 
             Console.ReadLine();
